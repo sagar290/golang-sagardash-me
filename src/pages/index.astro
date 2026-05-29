@@ -70,6 +70,17 @@ const articles = await getMediumArticles();
                 <CodeBlock keyword="var" title="Links" varTitle="socials" isStruct={false}>
                     <ul class="list-none flex flex-col gap-2">
                         <li class="flex items-center gap-2">
+                            <span class={variable}>Website</span>
+                            <span class="text-editor-text">:</span>
+                            <a
+                                href={content.socials.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class={`${string} hover:underline decoration-editor-string/40 underline-offset-4`}
+                                >"{content.socials.website}"</a
+                            >,
+                        </li>
+                        <li class="flex items-center gap-2">
                             <span class={variable}>Blog</span>
                             <span class="text-editor-text">:</span>
                             <a
