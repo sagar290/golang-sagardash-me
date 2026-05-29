@@ -31,6 +31,20 @@ const sameAs = [
     content.socials.linkedin,
     content.socials.blog,
 ].filter(Boolean);
+const alternateNames = content.alternate_names ?? [];
+const seoKeywords = content.seo_keywords ?? [];
+const knowsAbout = [
+    "Go",
+    "Golang",
+    "Go language",
+    "Backend Engineering",
+    "Microservices",
+    "Kubernetes",
+    "Distributed Systems",
+    "Cloud Architecture",
+    "Cloud-native APIs",
+    "API Platforms",
+];
 const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -38,6 +52,7 @@ const structuredData = {
             "@type": "Person",
             "@id": `${canonicalURLString}#person`,
             name: content.name,
+            alternateName: alternateNames,
             jobTitle: content.title,
             url: canonicalURLString,
             email: `mailto:${content.email}`,
@@ -49,14 +64,13 @@ const structuredData = {
                 addressLocality: content.position.city,
                 addressCountry: content.position.country,
             },
-            knowsAbout: [
-                "Go",
-                "Microservices",
-                "Kubernetes",
-                "Distributed Systems",
-                "Cloud Architecture",
-                "API Platforms",
-            ],
+            knowsAbout,
+            skills: knowsAbout,
+            hasOccupation: {
+                "@type": "Occupation",
+                name: "Go Backend Architect",
+                skills: knowsAbout.join(", "),
+            },
         },
         {
             "@type": "ProfilePage",
@@ -76,6 +90,7 @@ const structuredData = {
 <!-- Basic SEO -->
 <title>{title}</title>
 <meta name="description" content={description} />
+{seoKeywords.length > 0 && <meta name="keywords" content={seoKeywords.join(", ")} />}
 <link rel="canonical" href={canonicalURLString} />
 <meta name="robots" content="index, follow" />
 
