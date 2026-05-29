@@ -142,48 +142,103 @@ const articles = await getMediumArticles();
 
         <!-- Right Content -->
         <section class="flex flex-col gap-10">
-            <!-- Summary block -->
-            <div class="code-container">
-                <div class={comment}>{`/*`}</div>
-                <div class={comment}>{` * ${content.bio}`}</div>
-                <div class={comment}>{` */`}</div>
-            </div>
-
-            <!-- Info struct -->
-            <CodeBlock keyword="type" title="type Information" isStruct={true}>
+            <!-- Profile structs -->
+            <CodeBlock keyword="type" title="Location" isStruct={true}>
                 <div class="flex flex-col gap-1">
                     <div>
-                        <span class={variable}>Name</span> string <span
-                            class={comment}
-                            >// "{content.name.toUpperCase()}"</span
-                        >
+                        <span class={variable}>City</span> string
                     </div>
                     <div>
-                        <span class={variable}>Title</span> string <span
-                            class={comment}>// "{content.title}"</span
-                        >
-                    </div>
-                    <div>
-                        <span class={variable}>Email</span> string <span
-                            class={comment}>// "{content.email}"</span
-                        >
-                    </div>
-                    <!-- <div>
-                        <span class={variable}>Phone</span> int <span
-                            class={comment}
-                            >// {content.phone.replace(/[^0-9]/g, "")}</span
-                        >
-                    </div> -->
-                    <div class="flex flex-wrap gap-x-1">
-                        <span class={variable}>Location</span> []string <span
-                            class={comment}
-                            >// {`{`} "{content.position.city}", "{
-                                content.position.country
-                            }" {`}`}</span
-                        >
+                        <span class={variable}>Country</span> string
                     </div>
                 </div>
             </CodeBlock>
+
+            <CodeBlock keyword="type" title="Information" isStruct={true}>
+                <div class="flex flex-col gap-1">
+                    <div>
+                        <span class={variable}>Name</span> string
+                    </div>
+                    <div>
+                        <span class={variable}>Title</span> string
+                    </div>
+                    <div>
+                        <span class={variable}>Email</span> string
+                    </div>
+                    <div>
+                        <span class={variable}>Location</span> Location
+                    </div>
+                </div>
+            </CodeBlock>
+
+            <!-- Profile methods -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2 whitespace-nowrap">
+                    <span class={keyword}>func</span>
+                    <span class="text-editor-text">(i *Information)</span>
+                    <span class={func}>GetProfile</span>() Information
+                </div>
+                <div class="text-editor-text">{`{`}</div>
+                <div class="pl-6 border-l border-[#333] ml-2 mt-1">
+                    <div>
+                        <span class={keyword}>return</span> Information{`{`}
+                    </div>
+                    <div class="pl-6 border-l border-[#444] ml-2 mt-1">
+                        <div>
+                            <span class={variable}>Name</span>:{" "}
+                            <span class={string}>"{content.name}"</span>,
+                        </div>
+                        <div>
+                            <span class={variable}>Title</span>:{" "}
+                            <span class={string}>"{content.title}"</span>,
+                        </div>
+                        <div>
+                            <span class={variable}>Email</span>:{" "}
+                            <span class={string}>"{content.email}"</span>,
+                        </div>
+                        <div>
+                            <span class={variable}>Location</span>: Location{`{`}
+                        </div>
+                        <div class="pl-6 border-l border-[#444] ml-2 mt-1">
+                            <div>
+                                <span class={variable}>City</span>:{" "}
+                                <span class={string}>"{content.position.city}"</span>,
+                            </div>
+                            <div>
+                                <span class={variable}>Country</span>:{" "}
+                                <span class={string}>
+                                    "{content.position.country}"
+                                </span>,
+                            </div>
+                        </div>
+                        <div class="text-editor-text">{`},`}</div>
+                    </div>
+                    <div class="text-editor-text">{`}`}</div>
+                </div>
+                <div class="text-editor-text">{`}`}</div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2 whitespace-nowrap">
+                    <span class={keyword}>func</span>
+                    <span class="text-editor-text">(i *Information)</span>
+                    <span class={func}>Summary</span>() string
+                </div>
+                <div class="text-editor-text">{`{`}</div>
+                <div class="pl-6 border-l border-[#333] ml-2 mt-1">
+                    <div>
+                        <span class={keyword}>return</span>{" "}
+                        <span class={string}>&#96;</span>
+                    </div>
+                    <div class={string + " pl-6"}>
+                        {content.bio}
+                    </div>
+                    <div>
+                        <span class={string}>&#96;</span>
+                    </div>
+                </div>
+                <div class="text-editor-text">{`}`}</div>
+            </div>
 
             <!-- Experience methods -->
             <div class="flex flex-col gap-4">

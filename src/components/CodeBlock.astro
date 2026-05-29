@@ -10,20 +10,21 @@ interface Props {
 
 const {
     keyword = "type",
-    className = "",
     title = "",
     isStruct = true,
     varTitle = "",
 } = Astro.props;
+
+const declaration = keyword === "var" || keyword.endsWith("Arr")
+    ? `${varTitle.toLocaleLowerCase()} := `
+    : keyword;
 ---
 
 <div class="mb-8">
     <div class="flex items-start gap-2">
 
         <span class="text-editor-keyword">
-        {keyword === "var" || keyword.endsWith('Arr')
-            ? `${varTitle.toLocaleLowerCase()} := `
-            : className[keyword]}
+            {declaration}
         </span>
 
         <span class="text-editor-class">{title}</span>
