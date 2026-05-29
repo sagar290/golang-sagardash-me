@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sagardash.me/sitemap-index.xml
+Sitemap: https://go.sagardash.me/sitemap-index.xml

@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import CodeBlock from "../components/CodeBlock.astro";
 import ContactForm from "../components/ContactForm.astro";
+import avatar from "../assets/avatar.png";
 import content from "../data/content.json";
 import { getMediumArticles } from "../../fetch-articles.js";
 
@@ -30,7 +31,7 @@ const articles = await getMediumArticles();
                     class="my-4 border-2 border-editor-keyword/30 p-1 w-fit bg-[#252526] shadow-xl hover:scale-[1.02] transition-transform duration-300"
                 >
                     <img
-                        src="/src/assets/avatar.png"
+                        src={avatar.src}
                         alt={content.name}
                         class="w-64 aspect-square object-cover"
                     />

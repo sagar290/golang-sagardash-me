@@ -60,4 +60,18 @@ Most portfolio content lives in `src/data/content.json`.
 
 ## Deployment Notes
 
-The site is configured for `https://sagardash.me` in `astro.config.mjs`. Production output is generated in `dist/` by `npm run build`.
+Production output is generated in `dist/` by `npm run build`.
+
+This repository includes a GitHub Pages workflow at `.github/workflows/deploy.yml`. It builds output for:
+
+```text
+https://go.sagardash.me
+```
+
+`astro.config.mjs` defaults to `https://go.sagardash.me`. The Pages workflow also builds with:
+
+```bash
+SITE=https://go.sagardash.me BASE_PATH=/ npm run build
+```
+
+In GitHub, set Pages source to **GitHub Actions** for the repository, then configure `go.sagardash.me` as the custom domain. The `public/CNAME` file keeps that domain attached on deploy.
