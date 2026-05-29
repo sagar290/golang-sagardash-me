@@ -194,11 +194,15 @@ const articles = await getMediumArticles();
                 </div>
                 <div class="text-editor-text">{`{`}</div>
                 <div class="pl-6 border-l border-[#333] ml-2 mt-1">
+                    <div>
+                        <span class={variable}>experiences</span> := []Experience{`{`}
+                    </div>
+                    <div class="pl-6 border-l border-[#444] ml-2 mt-1">
                     {
                         content.experience.map((exp) => (
-                            <div class="mb-10 last:mb-0">
+                            <div class="mb-6 last:mb-0">
                                 <div class="text-editor-text">
-                                    return []Experience{`{`}
+                                    {`{`}
                                 </div>
                                 <div class="pl-6 border-l border-[#444] ml-2 mt-1">
                                     <div class="flex flex-col gap-1">
@@ -242,19 +246,32 @@ const articles = await getMediumArticles();
                                             </span>
                                             {`)`},
                                         </div>
-                                        <div class={comment}>{`/*`}</div>
+                                        <div>
+                                            <span class={variable}>
+                                                Description
+                                            </span>:{" "}
+                                            <span class={string}> &#96;</span>
+                                        </div>
                                         {exp.bullets.map((b) => (
                                             <div
-                                                class={comment}
-                                            >{` * ${b}`}</div>
+                                                class={string + " pl-6"}
+                                            > * {b}</div>
                                         ))}
-                                        <div class={comment}>{` */`}</div>
+                                        <div>
+                                            <span class={string}>&#96;</span>,
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="text-editor-text">{`}`}</div>
+                                <div class="text-editor-text">{`},`}</div>
                             </div>
                         ))
                     }
+                    </div>
+                    <div class="text-editor-text">{`}`}</div>
+                    <div class="mt-6">
+                        <span class={keyword}>return</span>{" "}
+                        <span class={variable}>experiences</span>
+                    </div>
                 </div>
                 <div class="text-editor-text">{`}`}</div>
             </div>
@@ -268,11 +285,15 @@ const articles = await getMediumArticles();
                 </div>
                 <div class="text-editor-text">{`{`}</div>
                 <div class="pl-6 border-l border-[#333] ml-2 mt-1">
+                    <div>
+                        <span class={variable}>projects</span> := []Project{`{`}
+                    </div>
+                    <div class="pl-6 border-l border-[#444] ml-2 mt-1">
                     {
                         content.projects.map((proj) => (
-                            <div class="mb-10 last:mb-0">
+                            <div class="mb-6 last:mb-0">
                                 <div class="text-editor-text">
-                                    return []Project{`{`}
+                                    {`{`}
                                 </div>
                                 <div class="pl-6 border-l border-[#444] ml-2 mt-1">
                                     <div class="flex flex-col gap-1">
@@ -291,17 +312,30 @@ const articles = await getMediumArticles();
                                             </span>{" "}
                                             {`}`},
                                         </div>
-                                        <div class={comment}>{`/*`}</div>
-                                        <div
-                                            class={comment}
-                                        >{` * ${proj.description}`}</div>
-                                        <div class={comment}>{` */`}</div>
+                                        <div>
+                                            <span class={variable}>
+                                                Description
+                                            </span>:{" "}
+                                            <span class={string}> &#96;</span>
+                                        </div>
+                                        <div class={string + " pl-6"}>
+                                            {proj.description}
+                                        </div>
+                                        <div>
+                                            <span class={string}>&#96;</span>,
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="text-editor-text">{`}`}</div>
+                                <div class="text-editor-text">{`},`}</div>
                             </div>
                         ))
                     }
+                    </div>
+                    <div class="text-editor-text">{`}`}</div>
+                    <div class="mt-6">
+                        <span class={keyword}>return</span>{" "}
+                        <span class={variable}>projects</span>
+                    </div>
                 </div>
                 <div class="text-editor-text">{`}`}</div>
             </div>
