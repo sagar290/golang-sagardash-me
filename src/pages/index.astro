@@ -23,6 +23,7 @@ const articles = await getMediumArticles();
     <main
         class="portfolio-canvas min-h-screen grid grid-cols-[450px_1fr] bg-[#1e1e1e] p-10 gap-8 w-[1280px] mx-auto"
     >
+        <h1 class="sr-only">{content.name} - {content.title}</h1>
         <!-- Left Sidebar -->
         <aside class="flex flex-col gap-10">
             <!-- Pfp block -->
@@ -74,6 +75,7 @@ const articles = await getMediumArticles();
                             <a
                                 href={content.socials.blog}
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class={`${string} hover:underline decoration-editor-string/40 underline-offset-4`}
                                 >"{content.socials.blog}"</a
                             >,
@@ -82,14 +84,11 @@ const articles = await getMediumArticles();
                             <span class={variable}>LinkedIn</span>
                             <span class="text-editor-text">:</span>
                             <a
-                                href={`https://linkedin.com/in/${content.name
-                                    .toLowerCase()
-                                    .replace(" ", "-")}`}
+                                href={content.socials.linkedin}
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class={`${string} hover:underline decoration-editor-string/40 underline-offset-4`}
-                                >"linkedin.com/in/{
-                                    content.name.toLowerCase().replace(" ", "-")
-                                }"</a
+                                >"{content.socials.linkedin}"</a
                             >,
                         </li>
                         <li class="flex items-center gap-2">
@@ -98,6 +97,7 @@ const articles = await getMediumArticles();
                             <a
                                 href={content.socials.github}
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 class={`${string} hover:underline decoration-editor-string/40 underline-offset-4`}
                                 >"{content.socials.github}"</a
                             >,
@@ -115,7 +115,7 @@ const articles = await getMediumArticles();
                                             <li>
                                                 <span class={variable}>Title</span>
                                                 <span class="text-editor-text">:</span>
-                                                <span class={string}>"<a href={c.url} target="_blank" class="hover:underline decoration-editor-string/40 underline-offset-4">{c.title}</a>"</span>
+                                                <span class={string}>"<a href={c.url} target="_blank" rel="noopener noreferrer" class="hover:underline decoration-editor-string/40 underline-offset-4">{c.title}</a>"</span>
                                                 <span class="text-editor-text">,</span>
                                             </li>
                                             <li>
@@ -142,6 +142,7 @@ const articles = await getMediumArticles();
 
         <!-- Right Content -->
         <section class="flex flex-col gap-10">
+            <h2 class="sr-only">Profile</h2>
             <!-- Profile structs -->
             <CodeBlock keyword="type" title="Location" isStruct={true}>
                 <div class="flex flex-col gap-1">
@@ -242,6 +243,7 @@ const articles = await getMediumArticles();
 
             <!-- Experience methods -->
             <div class="flex flex-col gap-4">
+                <h2 class="sr-only">Experience</h2>
                 <div class="flex items-center gap-2 whitespace-nowrap">
                     <span class={keyword}>func</span>
                     <span class="text-editor-text">(i *Information)</span>
@@ -270,6 +272,7 @@ const articles = await getMediumArticles();
                                                 <a
                                                     href={exp.link}
                                                     target="_blank"
+                                                    rel="noopener noreferrer"
                                                     class={`hover:underline decoration-editor-string/50 ${string}`}
                                                 >
                                                     "{exp.company}"
@@ -333,6 +336,7 @@ const articles = await getMediumArticles();
 
             <!-- Projects -->
             <div class="flex flex-col gap-4">
+                <h2 class="sr-only">Projects</h2>
                 <div class="flex items-center gap-2">
                     <span class={keyword}>func</span>
                     <span class="text-editor-text">(i *Information)</span>
@@ -397,6 +401,7 @@ const articles = await getMediumArticles();
 
             <!-- Articles -->
             <div class="flex flex-col gap-4">
+                <h2 class="sr-only">Articles</h2>
                 <div class="flex items-center gap-2">
                     <span class={keyword}>func</span>
                     <span class="text-editor-text">(i *Information)</span>
@@ -414,6 +419,7 @@ const articles = await getMediumArticles();
                                     <a
                                         href={art.url}
                                         target="_blank"
+                                        rel="noopener noreferrer"
                                         class={`${string} hover:underline decoration-editor-string/40 underline-offset-4`}
                                     >
                                         "{art.title}"
@@ -430,7 +436,10 @@ const articles = await getMediumArticles();
                 <div class="text-editor-text">{`}`}</div>
             </div>
 
-            <ContactForm />
+            <section aria-labelledby="contact-heading">
+                <h2 id="contact-heading" class="sr-only">Contact</h2>
+                <ContactForm />
+            </section>
         </section>
     </main>
 </Layout>

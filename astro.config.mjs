@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 
 const site = process.env.SITE ?? 'https://go.sagardash.me';
@@ -8,5 +9,5 @@ const base = process.env.BASE_PATH ?? '/';
 export default defineConfig({
   site,
   base,
-  integrations: [tailwind()],
+  integrations: [tailwind(), sitemap()],
 });
