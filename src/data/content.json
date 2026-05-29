@@ -109,15 +109,15 @@
     "articles": [
         {
             "title": "Make Your Own API Gateway with NGINX",
-            "url": "https://sagardash.me/articles/nginx-api-gateway"
+            "url": "/articles/nginx-api-gateway"
         },
         {
             "title": "Database: Human readable values vs. numeric Values",
-            "url": "https://sagardash.me/articles/database-values"
+            "url": "/articles/database-values"
         },
         {
             "title": "Creating Sequential and Padded Invoice IDs with SQL",
-            "url": "https://sagardash.me/articles/sql-invoice-ids"
+            "url": "/articles/sql-invoice-ids"
         }
     ],
     "contributions": [
