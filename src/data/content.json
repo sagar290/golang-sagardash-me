@@ -1,0 +1,149 @@
+{
+    "name": "Sagar Dash",
+    "title": "Backend Architect",
+    "site_url": "https://sagardash.me",
+    "description": "APIs | Microservices | Distributed Systems | Cloud Architecture",
+    "gtag_id": "G-S5X7CD336W",
+    "formspree_id": "xreawpqj",
+    "email": "talk@sagardash.me",
+    "position": {
+        "city": "Dhaka",
+        "country": "Bangladesh"
+    },
+    "platforms": [
+        "Linux",
+        "Windows",
+        "Cloud",
+        "Microservices"
+    ],
+    "languages": [
+        "Go",
+        "PHP",
+        "SQL",
+        "Bash",
+        "JavaScript",
+        "Python",
+        "C++"
+    ],
+    "softwares": [
+        "Redis",
+        "Kubernetes",
+        "RabbitMQ",
+        "Docker",
+        "gRPC",
+        "PostgreSQL",
+        "MySQL",
+        "NGINX",
+        "Git",
+        "Jira",
+        "VS Code"
+    ],
+    "socials": {
+        "github": "https://github.com/sagar290",
+        "linkedin": "https://linkedin.com/in/sagardash",
+        "blog": "https://sagar-dash290.medium.com"
+    },
+    "bio": "Backend-focused engineer with 8+ years of experience scaling distributed systems. Expert in Go, microservices, Kubernetes, Redis, and event-driven architectures.",
+    "experience": [
+        {
+            "company": "Pathao",
+            "role": "Senior Software Engineer",
+            "period": {
+                "from": "Oct 2021",
+                "to": "Present"
+            },
+            "bullets": [
+                "Backend Engineer leading Go-based distributed services powering logistics and merchant systems",
+                "Design and maintain system architecture",
+                "Optimize high-load endpoints using goroutines (40% latency improvement)",
+                "Mentor junior engineers on distributed systems"
+            ],
+            "link": "https://pathao.com"
+        },
+        {
+            "company": "10 Minute School",
+            "role": "Lead Specialist, Engineering",
+            "period": {
+                "from": "May 2019",
+                "to": "Sept 2021"
+            },
+            "bullets": [
+                "Architected Live Class backend for 1,000+ concurrent users",
+                "Designed robust payment system with RabbitMQ",
+                "Built high-concurrency quiz engine for massive traffic spikes",
+                "Developed CRM dashboard for operational efficiency"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Agents Salary Automation",
+            "description": "Architected a high-concurrency Go service using goroutines, significantly reducing payout latency for thousands of agents.",
+            "tech": [
+                "Go",
+                "System Design",
+                "Scalability"
+            ]
+        },
+        {
+            "name": "Payment Architecture",
+            "description": "Architected a robust Payment System using RabbitMQ to ensure transactional integrity and handle peak loads.",
+            "tech": [
+                "RabbitMQ",
+                "PHP",
+                "Payment Systems",
+                "Event-driven"
+            ]
+        },
+        {
+            "name": "Logistics Management",
+            "description": "Engineered a real-time Go backend with Redis to optimize vehicle allocation and tracking reliability.",
+            "tech": [
+                "Go",
+                "Redis",
+                "Real-time",
+                "Optimization"
+            ]
+        }
+    ],
+    "articles": [
+        {
+            "title": "Make Your Own API Gateway with NGINX",
+            "url": "https://sagardash.me/articles/nginx-api-gateway"
+        },
+        {
+            "title": "Database: Human readable values vs. numeric Values",
+            "url": "https://sagardash.me/articles/database-values"
+        },
+        {
+            "title": "Creating Sequential and Padded Invoice IDs with SQL",
+            "url": "https://sagardash.me/articles/sql-invoice-ids"
+        }
+    ],
+    "contributions": [
+        {
+            "title": "pathao-eng/courier-woocommerce-plugin",
+            "type": "author",
+            "description": "WooCommerce plugin for Pathao Courier integration, enabling seamless shipping management for e-commerce stores.",
+            "url": "https://github.com/pathao-eng/courier-woocommerce-plugin/activity?actor=sagar290"
+        },
+        {
+            "title": "sagar290/migo",
+            "type": "author",
+            "description": "Migo is a lightweight, Go-based database migration CLI and library inspired by tools like Laravel's migration system. It helps you version your schema changes, apply migrations, rollback, and manage migration files using a clean, intuitive workflow.",
+            "url": "https://github.com/sagar290/migo"
+        },
+        {
+            "title": "hoppscotch/hoppscotch",
+            "type": "contributor",
+            "description": "Save the different pane sizes (for instance, in local storage) in order to restore the visual configuration the next time the app is opened",
+            "url": "https://github.com/hoppscotch/hoppscotch/pull/2556"
+        },
+        {
+            "title": "siddharthvaddem/openscreen",
+            "type": "contributor",
+            "description": "OpenScreen is your free, open-source alternative to Screen Studio",
+            "url": "https://github.com/siddharthvaddem/openscreen/pull/600"
+        }
+    ]
+}

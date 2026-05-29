@@ -1,0 +1,37 @@
+---
+interface Props {
+    keyword?: string; // type, const, var
+    className?: string;
+    title?: string;
+    isStruct?: boolean;
+    icon?: string;
+    varTitle?: string;
+}
+
+const {
+    keyword = "type",
+    className = "",
+    title = "",
+    isStruct = true,
+    varTitle = "",
+} = Astro.props;
+---
+
+<div class="mb-8">
+    <div class="flex items-start gap-2">
+
+        <span class="text-editor-keyword">
+        {keyword === "var" || keyword.endsWith('Arr')
+            ? `${varTitle.toLocaleLowerCase()} := `
+            : className[keyword]}
+        </span>
+
+        <span class="text-editor-class">{title}</span>
+        {isStruct ? <span class="text-editor-keyword">struct</span> : ""}
+        <div class="text-editor-text">{`{`}</div>
+    </div>
+    <div class="pl-6 border-l border-[#333] ml-2 mt-1">
+        <slot />
+    </div>
+    <div class="text-editor-text">{`}`}</div>
+</div>

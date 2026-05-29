@@ -1,0 +1,101 @@
+---
+import content from "../data/content.json";
+
+const keyword = "text-editor-keyword";
+const variable = "text-editor-variable";
+const string = "text-editor-string";
+const func = "text-editor-func";
+const comment = "text-editor-comment italic";
+---
+
+<div class="mb-8">
+    <div class="flex items-start gap-2">
+        <span class={keyword}>type</span>
+        <span class="text-editor-class">Contact</span>
+        <span class={keyword}>struct</span>
+    </div>
+    <div class="text-editor-text">{`{`}</div>
+    <div class="pl-6 border-l border-[#333] ml-2 mt-4">
+        <form
+            action={`https://formspree.io/f/${content.formspree_id}`}
+            method="POST"
+            class="flex flex-col gap-6"
+        >
+            <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-2">
+                    <span class={keyword}>func</span>
+                    <span class="text-editor-text">(c *Contact)</span>
+                    <span class={func}>SendMessage</span>
+                    <span class="text-editor-text">(</span>
+                </div>
+
+                <!-- Inputs styled to look like parameters -->
+                <div class="pl-8 flex flex-col gap-3">
+                    <div
+                        class="flex items-center gap-2 flex-wrap text-editor-text"
+                    >
+                        <span class={variable}>yourName</span>
+                        <span class={keyword}>string</span>
+                        <span>=</span>
+                        <input
+                            type="text"
+                            name="name"
+                            required
+                            placeholder='"Sagar Dash"'
+                            class="bg-transparent border-none outline-none text-editor-string p-0 m-0 w-48 placeholder:text-editor-string/50"
+                        />
+                        <span>,</span>
+                    </div>
+
+                    <div
+                        class="flex items-center gap-2 flex-wrap text-editor-text"
+                    >
+                        <span class={variable}>yourEmail</span>
+                        <span class={keyword}>string</span>
+                        <span>=</span>
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                            placeholder='"sagar@example.com"'
+                            class="bg-transparent border-none outline-none text-editor-string p-0 m-0 w-64 placeholder:text-editor-string/50"
+                        />
+                        <span>,</span>
+                    </div>
+
+                    <div class="flex flex-col gap-2 text-editor-text">
+                        <div class="flex items-center gap-2">
+                            <span class={variable}>yourMessage</span>
+                            <span class={keyword}>string</span>
+                            <span>=</span>
+                        </div>
+                        <textarea
+                            name="message"
+                            required
+                            placeholder='"Hey Sagar, I have a project..."'
+                            rows="4"
+                            class="bg-[#252526] border border-[#3e3e3e] outline-none text-editor-string p-3 w-full max-w-lg rounded-sm placeholder:text-editor-string/30 focus:border-editor-keyword/50 transition-colors"
+                        ></textarea>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <span class="text-editor-text">) eror</span>
+                </div>
+
+                <div class="mt-4 flex items-center gap-4">
+                    <button
+                        type="submit"
+                        class="bg-[#3e3e3e] hover:bg-editor-keyword text-editor-text hover:text-white px-4 py-1.5 rounded-sm transition-all flex items-center gap-2 font-mono text-sm border border-[#555]"
+                    >
+                        <span class={keyword}>go</span>
+                        <span>c.</span>
+                        <span class={func}>PostAsync</span>()
+                    </button>
+                    <span class={comment}>// Click to Send Request</span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="text-editor-text mt-4">{`}`}</div>
+</div>

@@ -1,0 +1,360 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CodeBlock from "../components/CodeBlock.astro";
+import ContactForm from "../components/ContactForm.astro";
+import content from "../data/content.json";
+import { getMediumArticles } from "../../fetch-articles.js";
+
+// Utility for indentation and common styles
+const comment = "text-editor-comment italic";
+const string = "text-editor-string";
+const keyword = "text-editor-keyword";
+const variable = "text-editor-variable";
+const number = "text-editor-number";
+const func = "text-editor-func";
+
+// Fetch articles from Medium at build time
+const articles = await getMediumArticles();
+---
+
+<Layout title={`${content.name} | ${content.title}`}>
+    <main
+        class="portfolio-canvas min-h-screen grid grid-cols-[450px_1fr] bg-[#1e1e1e] p-10 gap-8 w-[1280px] mx-auto"
+    >
+        <!-- Left Sidebar -->
+        <aside class="flex flex-col gap-10">
+            <!-- Pfp block -->
+            <div class="code-container">
+                <div class={comment}>{`<img />`}</div>
+                <div
+                    class="my-4 border-2 border-editor-keyword/30 p-1 w-fit bg-[#252526] shadow-xl hover:scale-[1.02] transition-transform duration-300"
+                >
+                    <img
+                        src="/src/assets/avatar.png"
+                        alt={content.name}
+                        class="w-64 aspect-square object-cover"
+                    />
+                </div>
+                <div class={comment}>{`</img>`}</div>
+            </div>
+
+            <!-- Sidebar Blocks -->
+            <div class="flex flex-col gap-6">
+                <CodeBlock keyword="var" varTitle="platforms" title="[]string" isStruct={false}>
+                    <ul class="list-none flex flex-col gap-1">
+                        {content.platforms.map((p) => <li>"{p}",</li>)}
+                    </ul>
+                </CodeBlock>
+
+                <CodeBlock keyword="var" title="[]String" varTitle="languages" isStruct={false}>
+                    <ul class="list-none flex flex-col gap-1">
+                        <li>
+                            {`"${content.languages.join('", "')}"`}
+                        </li>
+                    </ul>
+                </CodeBlock>
+
+                <CodeBlock keyword="var" varTitle="softwares" title="[]string" isStruct={false}>
+                    <div class="grid grid-cols-1 gap-1">
+                        {content.softwares.map((s) => <span>{s},</span>)}
+                    </div>
+                </CodeBlock>
+
+                <CodeBlock keyword="var" title="Links" varTitle="socials" isStruct={false}>
+                    <ul class="list-none flex flex-col gap-2">
+                        <li class="flex items-center gap-2">
+                            <span class={variable}>Blog</span>
+                            <span class="text-editor-text">:</span>
+                            <a
+                                href={content.socials.blog}
+                                target="_blank"
+                                class={`${string} hover:underline decoration-editor-string/40 underline-offset-4`}
+                                >"{content.socials.blog}"</a
+                            >,
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class={variable}>LinkedIn</span>
+                            <span class="text-editor-text">:</span>
+                            <a
+                                href={`https://linkedin.com/in/${content.name
+                                    .toLowerCase()
+                                    .replace(" ", "-")}`}
+                                target="_blank"
+                                class={`${string} hover:underline decoration-editor-string/40 underline-offset-4`}
+                                >"linkedin.com/in/{
+                                    content.name.toLowerCase().replace(" ", "-")
+                                }"</a
+                            >,
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class={variable}>GitHub</span>
+                            <span class="text-editor-text">:</span>
+                            <a
+                                href={content.socials.github}
+                                target="_blank"
+                                class={`${string} hover:underline decoration-editor-string/40 underline-offset-4`}
+                                >"{content.socials.github}"</a
+                            >,
+                        </li>
+                    </ul>
+                </CodeBlock>
+
+                <CodeBlock keyword="var" varTitle="contributions" title="[]Contribution" isStruct={false}>
+                    <ul class="list-none flex flex-col gap-1">
+                        {content.contributions.map((c) => {
+                            return (
+                                <li >
+                                    <span class="text-editor-text">{'{'}</span>
+                                        <ul class="list-none flex flex-col gap-1 pl-4">
+                                            <li>
+                                                <span class={variable}>Title</span>
+                                                <span class="text-editor-text">:</span>
+                                                <span class={string}>"<a href={c.url} target="_blank" class="hover:underline decoration-editor-string/40 underline-offset-4">{c.title}</a>"</span>
+                                                <span class="text-editor-text">,</span>
+                                            </li>
+                                            <li>
+                                                <span class={variable}>As</span>
+                                                <span class="text-editor-text">:</span>
+                                                <span class={string}>"{c.type}"</span>
+                                                <span class="text-editor-text">,</span>
+                                            </li>
+                                            <li>
+                                                <span class={variable}>Description</span>
+                                                <span class="text-editor-text">:</span>
+                                                <span class={string}>"{c.description}"</span>
+                                                <span class="text-editor-text"></span>
+                                            </li>
+                                        </ul>
+                                    <span class="text-editor-text">{'}'}</span>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </CodeBlock>
+            </div>
+        </aside>
+
+        <!-- Right Content -->
+        <section class="flex flex-col gap-10">
+            <!-- Summary block -->
+            <div class="code-container">
+                <div class={comment}>{`/*`}</div>
+                <div class={comment}>{` * ${content.bio}`}</div>
+                <div class={comment}>{` */`}</div>
+            </div>
+
+            <!-- Info struct -->
+            <CodeBlock keyword="type" title="Information" isStruct={true}>
+                <div class="flex flex-col gap-1">
+                    <div>
+                        <span class={variable}>Name</span> string <span
+                            class={comment}
+                            >// "{content.name.toUpperCase()}"</span
+                        >
+                    </div>
+                    <div>
+                        <span class={variable}>Title</span> string <span
+                            class={comment}>// "{content.title}"</span
+                        >
+                    </div>
+                    <div>
+                        <span class={variable}>Email</span> string <span
+                            class={comment}>// "{content.email}"</span
+                        >
+                    </div>
+                    <!-- <div>
+                        <span class={variable}>Phone</span> int <span
+                            class={comment}
+                            >// {content.phone.replace(/[^0-9]/g, "")}</span
+                        >
+                    </div> -->
+                    <div class="flex flex-wrap gap-x-1">
+                        <span class={variable}>Location</span> []string <span
+                            class={comment}
+                            >// {`{`} "{content.position.city}", "{
+                                content.position.country
+                            }" {`}`}</span
+                        >
+                    </div>
+                </div>
+            </CodeBlock>
+
+            <!-- Experience methods -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2 whitespace-nowrap">
+                    <span class={keyword}>func</span>
+                    <span class="text-editor-text">(i *Information)</span>
+                    <span class={func}>GetExperiences</span>() []Experience
+                </div>
+                <div class="text-editor-text">{`{`}</div>
+                <div class="pl-6 border-l border-[#333] ml-2 mt-1">
+                    {
+                        content.experience.map((exp) => (
+                            <div class="mb-10 last:mb-0">
+                                <div class="text-editor-text">
+                                    return []Experience{`{`}
+                                </div>
+                                <div class="pl-6 border-l border-[#444] ml-2 mt-1">
+                                    <div class="flex flex-col gap-1">
+                                        <div>
+                                            <span class={variable}>
+                                                Company
+                                            </span>
+                                            :{" "}
+                                            {exp.link ? (
+                                                <a
+                                                    href={exp.link}
+                                                    target="_blank"
+                                                    class={`hover:underline decoration-editor-string/50 ${string}`}
+                                                >
+                                                    "{exp.company}"
+                                                </a>
+                                            ) : (
+                                                <span class={string}>
+                                                    "{exp.company}"
+                                                </span>
+                                            )}
+                                            ,
+                                        </div>
+                                        <div>
+                                            <span class={variable}>Role</span>:{" "}
+                                            <span class={string}>
+                                                "{exp.role}"
+                                            </span>
+                                            ,
+                                        </div>
+                                        <div>
+                                            <span class={variable}>Period</span>
+                                            : <span class={func}>Range</span>
+                                            {`(`}
+                                            <span class={string}>
+                                                "{exp.period.from}"
+                                            </span>
+                                            ,{" "}
+                                            <span class={string}>
+                                                "{exp.period.to}"
+                                            </span>
+                                            {`)`},
+                                        </div>
+                                        <div class={comment}>{`/*`}</div>
+                                        {exp.bullets.map((b) => (
+                                            <div
+                                                class={comment}
+                                            >{` * ${b}`}</div>
+                                        ))}
+                                        <div class={comment}>{` */`}</div>
+                                    </div>
+                                </div>
+                                <div class="text-editor-text">{`}`}</div>
+                            </div>
+                        ))
+                    }
+                </div>
+                <div class="text-editor-text">{`}`}</div>
+            </div>
+
+            <!-- Projects -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2">
+                    <span class={keyword}>func</span>
+                    <span class="text-editor-text">(i *Information)</span>
+                    <span class={func}>GetProjects</span>() []Project
+                </div>
+                <div class="text-editor-text">{`{`}</div>
+                <div class="pl-6 border-l border-[#333] ml-2 mt-1">
+                    {
+                        content.projects.map((proj) => (
+                            <div class="mb-10 last:mb-0">
+                                <div class="text-editor-text">
+                                    return []Project{`{`}
+                                </div>
+                                <div class="pl-6 border-l border-[#444] ml-2 mt-1">
+                                    <div class="flex flex-col gap-1">
+                                        <div>
+                                            <span class={variable}>Name</span>:{" "}
+                                            <span class={string}>
+                                                "{proj.name}"
+                                            </span>
+                                            ,
+                                        </div>
+                                        <div>
+                                            <span class={variable}>Stack</span>:
+                                            []string{`{`}{" "}
+                                            <span class={string}>
+                                                "{proj.tech.join('", "')}"
+                                            </span>{" "}
+                                            {`}`},
+                                        </div>
+                                        <div class={comment}>{`/*`}</div>
+                                        <div
+                                            class={comment}
+                                        >{` * ${proj.description}`}</div>
+                                        <div class={comment}>{` */`}</div>
+                                    </div>
+                                </div>
+                                <div class="text-editor-text">{`}`}</div>
+                            </div>
+                        ))
+                    }
+                </div>
+                <div class="text-editor-text">{`}`}</div>
+            </div>
+
+            <!-- Articles -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-2">
+                    <span class={keyword}>func</span>
+                    <span class="text-editor-text">(i *Information)</span>
+                    <span class={func}>LatestArticles</span>() []Article
+                </div>
+                <div class="text-editor-text">{`{`}</div>
+                <div class="pl-6 border-l border-[#333] ml-2 mt-1">
+                    {
+                        articles.map((art) => (
+                            <div class="mb-6 last:mb-0 flex flex-col gap-1">
+                                <div class="flex items-center gap-2">
+                                    <span class={keyword}>const</span>
+                                    <span class={variable}>Title</span>
+                                    <span class="text-editor-text">=</span>
+                                    <a
+                                        href={art.url}
+                                        target="_blank"
+                                        class={`${string} hover:underline decoration-editor-string/40 underline-offset-4`}
+                                    >
+                                        "{art.title}"
+                                    </a>
+                                </div>
+                                <div class={comment}>{`// ${art.url}`}</div>
+                                {art.description && (
+                                    <div class={comment}>{`// ${art.description}`}</div>
+                                )}
+                            </div>
+                        ))
+                    }
+                </div>
+                <div class="text-editor-text">{`}`}</div>
+            </div>
+
+            <ContactForm />
+        </section>
+    </main>
+</Layout>
+
+<style>
+    .code-container {
+        @apply font-mono leading-relaxed;
+    }
+
+    @media (max-width: 1279px) {
+        :global(body) {
+            overflow-x: hidden;
+        }
+
+        .portfolio-canvas {
+            transform: scale(calc(100vw / 1280px));
+            transform-origin: top left;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+</style>

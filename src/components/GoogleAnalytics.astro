@@ -1,0 +1,17 @@
+---
+import content from "../data/content.json";
+const { gtag_id } = content;
+---
+
+{gtag_id && (
+  <>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${gtag_id}`}></script>
+    <script define:vars={{ gtag_id }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gtag_id);
+    </script>
+  </>
+)}

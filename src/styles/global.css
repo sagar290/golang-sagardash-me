@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply bg-editor-bg text-editor-text antialiased;
+	}
+}
+
+@layer components {
+	.code-keyword { @apply text-editor-keyword font-semibold; }
+	.code-class { @apply text-editor-class; }
+	.code-variable { @apply text-editor-variable; }
+	.code-string { @apply text-editor-string; }
+	.code-comment { @apply text-editor-comment italic; }
+	.code-number { @apply text-editor-number; }
+	.code-func { @apply text-editor-func; }
+}

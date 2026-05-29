@@ -1,0 +1,57 @@
+---
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import SEO from "../components/SEO.astro";
+
+export interface Props {
+    title?: string;
+    description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <SEO title={title} description={description} />
+        <GoogleAnalytics />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            @import "../styles/global.css";
+        </style>
+    </head>
+    <body class="bg-[#1e1e1e] text-[#d4d4d4] font-mono selection:bg-[#264f78]">
+        <slot />
+    </body><style is:global>
+        :root {
+            --editor-bg: #1e1e1e;
+            --sidebar-bg: #252526;
+        }
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #3e3e3e transparent;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3e3e3e;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4e4e4e;
+        }
+    </style>
+</html>
