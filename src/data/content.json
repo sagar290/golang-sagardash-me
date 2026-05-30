@@ -1,8 +1,8 @@
 {
     "name": "Sagar Dash",
-    "title": "Backend Architect",
+    "title": "Senior Software Engineer",
     "site_url": "https://go.sagardash.me",
-    "description": "Sagar Dash is a Go backend architect specializing in Golang, microservices, Kubernetes, distributed systems, and cloud-native API platforms.",
+    "description": "Sagar Dash is a senior software engineer specializing in Go, microservices, Kubernetes, distributed systems, and high-availability backend services.",
     "alternate_names": [
         "Sagar Das",
         "Sagor Dash",
@@ -17,50 +17,46 @@
         "Sagar Dash",
         "Sagar Das",
         "Sagor Dash",
-        "Go backend architect",
+        "Senior Software Engineer",
+        "Go backend engineer",
         "Golang engineer",
         "Go engineer",
         "backend engineer Bangladesh",
-        "microservices architect",
+        "microservices engineer",
         "distributed systems engineer",
         "Kubernetes backend engineer",
-        "cloud-native API architect"
+        "high-availability backend services"
     ],
     "gtag_id": "G-S5X7CD336W",
     "formspree_id": "xreawpqj",
     "email": "talk@sagardash.me",
-    "avatar_ascii": "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n@:::::::.....  =-=:.:......=+*======-==+++++@\n@:..::::::...  ==+-:::::...==::-=++=--+####@\n@..:::.......  ==+-:-::::..++:.:::-=**+#%%%%@\n@:.:::....::.  ==+=--::::..++-::::.=+--=+*#%@\n@:........:.. .==+-::::::..++-::::.=+::::==+@\n@::::-....:.. .===:........=+-::::.-+:::.--:@\n@::::.....:.. .=-:.. ..:::..:-:::..-=:::.--:@\n@............ .=:.----=====-.:.::..-=::..-::@\n@..::.....:.. .-:+*#**++==++-::::..--::..:::@\n@.........:.. .--**##**+=-+*=::::..:-::..::.@\n@............ .--+===*+:--=+*::::..:-:...::.@\n@...::...::.. .-=*=-=*+-=-==*=-....:-:...-:@\n@:::......:.. .:+#**#*+=+*+**=-::..--::..-:@\n@............  :+#*=*+---+=+*+:....--::..-:@\n@..:......:..  :=*+=+*==-===+-.....:-:...-:@\n@............  ::=++**====-==:.... :-....::@\n@.........:..  :::-===::::--:..... .:......@\n@..:.:......   .:::-=-:.::.. .....  .......@\n@.::........   ...::*++==-:............. ..@\n@........... .......+***=:..... ....::.....@\n@...................-*+................:.:.@\n@................ ..:+: ...................@\n@   ............. ::......... ..............@\n@................ ::.:::.... ...............@\n@.::..............:::::............ .  ....:@\n@...... ........ .:::::......... ..     ...:@\n@  ...  ........ :.:::......... ..      ...:@\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
     "position": {
         "city": "Dhaka",
         "country": "Bangladesh"
     },
     "platforms": [
-        "Linux",
-        "Windows",
-        "Cloud",
-        "Microservices"
+        "AWS",
+        "GCP",
+        "Linux"
     ],
     "languages": [
         "Go",
         "PHP",
-        "SQL",
-        "Bash",
         "JavaScript",
-        "Python",
-        "C++"
+        "Python"
     ],
     "softwares": [
-        "Redis",
-        "Kubernetes",
-        "RabbitMQ",
         "Docker",
-        "gRPC",
-        "PostgreSQL",
-        "MySQL",
-        "NGINX",
-        "Git",
-        "Jira",
-        "VS Code"
+        "Kubernetes",
+        "Terraform",
+        "GitHub Actions",
+        "Redis",
+        "RabbitMQ",
+        "AWS SQS",
+        "Gin",
+        "Go Chi",
+        "Laravel",
+        "NestJS"
     ],
     "socials": {
         "website": "https://sagardash.me",
@@ -68,20 +64,20 @@
         "linkedin": "https://linkedin.com/in/sagardash",
         "blog": "https://sagar-dash290.medium.com"
     },
-    "bio": "Backend-focused engineer with 8+ years of experience scaling distributed systems. Expert in Go, microservices, Kubernetes, Redis, and event-driven architectures.",
+    "bio": "Backend-focused Software Engineer with 8+ years of experience designing and scaling distributed systems. Strong expertise in Go, microservices architecture, Kubernetes, Redis, and event-driven systems. Experienced in building high-availability backend services handling real-time traffic at scale.",
     "experience": [
         {
             "company": "Pathao",
             "role": "Senior Software Engineer",
             "period": {
-                "from": "Oct 2021",
+                "from": "Sept 2023",
                 "to": "Present"
             },
             "bullets": [
-                "Backend Engineer leading Go-based distributed services powering logistics and merchant systems",
-                "Design and maintain system architecture",
-                "Optimize high-load endpoints using goroutines (40% latency improvement)",
-                "Mentor junior engineers on distributed systems"
+                "Lead Backend Engineer for Go-based distributed services powering logistics and merchant systems in a high-traffic super app",
+                "Design and maintain system architecture, leading the team and optimizing high-load endpoints using goroutines to improve latency by 40%",
+                "Lead incident response and Root Cause Analysis (RCA) for production outages",
+                "Built scalable systems for agent salary automation, merchant issue management, logistics management, and agent compensation"
             ],
             "link": "https://pathao.com"
         },
@@ -89,14 +85,14 @@
             "company": "10 Minute School",
             "role": "Lead Specialist, Engineering",
             "period": {
-                "from": "May 2019",
-                "to": "Sept 2021"
+                "from": "Sept 2017",
+                "to": "Sept 2023"
             },
             "bullets": [
-                "Architected Live Class backend for 1,000+ concurrent users",
-                "Designed robust payment system with RabbitMQ",
-                "Built high-concurrency quiz engine for massive traffic spikes",
-                "Developed CRM dashboard for operational efficiency"
+                "Contributed to the growth of Bangladesh's fastest-growing Ed-Tech startup as a Full Stack Developer",
+                "Collaborated with Product and Mobile teams to define specifications for the Logistics module",
+                "Architected the Live Class backend to support 1,000 concurrent users using Go and Redis",
+                "Built payment, quiz, exam, and CRM systems for transactional integrity, traffic spikes, and operational efficiency"
             ]
         }
     ],
@@ -111,16 +107,6 @@
             ]
         },
         {
-            "name": "Payment Architecture",
-            "description": "Architected a robust Payment System using RabbitMQ to ensure transactional integrity and handle peak loads.",
-            "tech": [
-                "RabbitMQ",
-                "PHP",
-                "Payment Systems",
-                "Event-driven"
-            ]
-        },
-        {
             "name": "Logistics Management",
             "description": "Engineered a real-time Go backend with Redis to optimize vehicle allocation and tracking reliability.",
             "tech": [
@@ -128,6 +114,34 @@
                 "Redis",
                 "Real-time",
                 "Optimization"
+            ]
+        },
+        {
+            "name": "Merchants Issue Management",
+            "description": "Designed a scalable system to streamline support workflows and drive sustainable growth for merchant partners.",
+            "tech": [
+                "Go",
+                "System Design",
+                "Scalability"
+            ]
+        },
+        {
+            "name": "Live Class",
+            "description": "Architected the Live Class backend to support 1,000 concurrent users using Go and Redis.",
+            "tech": [
+                "Go",
+                "Redis",
+                "Concurrency"
+            ]
+        },
+        {
+            "name": "Payment Architecture",
+            "description": "Architected a robust Payment System using RabbitMQ to ensure transactional integrity and handle peak loads.",
+            "tech": [
+                "RabbitMQ",
+                "PHP",
+                "Payment Systems",
+                "Event-driven"
             ]
         }
     ],

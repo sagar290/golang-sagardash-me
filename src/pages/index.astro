@@ -13,34 +13,29 @@ const keyword = "text-editor-keyword";
 const variable = "text-editor-variable";
 const number = "text-editor-number";
 const func = "text-editor-func";
-const avatarAscii = content.avatar_ascii.trim();
 
 // Fetch articles from Medium at build time
 const articles = await getMediumArticles();
 ---
 
-<Layout title={`${content.name} | Go Backend Architect`}>
+<Layout title={`${content.name} | ${content.title}`}>
     <main
         class="portfolio-canvas min-h-screen grid grid-cols-[450px_1fr] bg-[#1e1e1e] p-10 gap-8 w-[1280px] mx-auto"
     >
-        <h1 class="sr-only">{content.name} - Go Backend Architect</h1>
+        <h1 class="sr-only">{content.name} - {content.title}</h1>
         <!-- Left Sidebar -->
         <aside class="flex flex-col gap-10">
             <!-- Pfp block -->
             <div class="code-container">
                 <div class={comment}>{`<img />`}</div>
                 <div
-                    class="group relative my-4 border-2 border-editor-keyword/30 p-1 w-fit cursor-pointer bg-[#252526] shadow-xl hover:scale-[1.02] transition-transform duration-300"
+                    class="relative my-4 border-2 border-editor-keyword/30 p-1 w-fit bg-[#252526] shadow-xl"
                 >
                     <img
                         src={avatarUrl}
                         alt={content.name}
-                        class="w-64 aspect-square object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                        class="w-64 aspect-square object-cover"
                     />
-                    <pre
-                        aria-hidden="true"
-                        class="absolute inset-1 flex items-center justify-center overflow-hidden border border-editor-string/40 bg-[#1e1e1e] text-[8px] leading-[8px] tracking-[0] text-editor-string whitespace-pre select-none transition-opacity duration-300 group-hover:opacity-0"
-                    >{avatarAscii}</pre>
                 </div>
                 <div class={comment}>{`</img>`}</div>
             </div>
